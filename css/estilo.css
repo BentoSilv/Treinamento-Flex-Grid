@@ -1,0 +1,116 @@
+body {
+    background: url(../Consultoria1.jpg) no-repeat;
+    background-size: cover;
+    
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap; /*quebrar, responsividade,no tamanho pequeno do layout */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   }
+   .menu__item {
+      flex: 1 1 200px;
+      margin: 5px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center ;
+     /* border: 1px solid black;*/
+      background-color: rgba(119, 53, 180, 0.76);
+      opacity: initial;
+   }
+   .menu__link{
+    color: #090909;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 14pt;
+
+
+   }
+
+   /* Gride Area*/
+   .l-wrapper {
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "aside-main"
+        "sidebar"
+        "aside-sec"
+        "footer"
+    ;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 1200px; /* total width: comment this */
+}
+
+@media (min-width: 48em) { /* 768px */
+    .l-wrapper {
+        grid-template-columns: repeat(6, 1fr); /* total width: 1fr repeat(4, minmax(auto, 200px)) 1fr */
+        grid-template-rows: .5fr 2fr .5fr .5fr;
+        grid-template-areas:
+             ".      main       main       main      sidebar   .     "
+             ".      aside-main aside-main aside-sec aside-sec .     "
+             "footer footer     footer     footer    footer    footer"
+        ;
+    }
+}
+
+
+
+.l-main {
+    background-color: coral;
+    grid-area: main;
+    height: 400px;
+}
+
+.l-sidebar {
+    background-color: royalblue;
+    grid-area: sidebar;
+    height: 400px;
+}
+
+.l-aside-main {
+   /* background-color: tomato;*/
+    grid-area: aside-main;
+    height: 300px;
+    background: url(../Consultoria2.jpg)no-repeat;
+    background-size: cover;
+}
+
+.l-aside-sec {
+    background-color: rebeccapurple;
+    grid-area: aside-sec;
+    height: 300px;
+    background: url(../Contabilidade1.jpg)no-repeat;
+    background-size: cover;
+    
+}
+
+.l-footer {
+    margin: 0;
+    padding: 0;
+    background-color: skyblue;
+    grid-area: footer;
+    height: 100px;
+}
+
+/* Estilo pagina */
+
+.l-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.l-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15pt;
+}
